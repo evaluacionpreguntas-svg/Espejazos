@@ -41,7 +41,7 @@ def generar_item_llm(imagen_cargada, taxonomia_dict, contexto_adicional, feedbac
     """
     
     # --- Configuración del Modelo ---
-    model = GenerativeModel("gemini-2.5-flash-lite") 
+    model = GenerativeModel("gemini-2.5-flash") 
     
     # --- Procesamiento de Imagen ---
     img_pil = Image.open(imagen_cargada)
@@ -202,7 +202,7 @@ def auditar_item_llm(item_json_texto, taxonomia_dict):
     """
     
     # Modelo de Gemini (corregido al que usas)
-    model = GenerativeModel("gemini-2.5-flash-lite")
+    model = GenerativeModel("gemini-2.5-flash")
     taxonomia_texto = "\n".join([f"* {k}: {v}" for k, v in taxonomia_dict.items()])
 
     prompt_auditor = f"""
@@ -498,7 +498,7 @@ def generar_oportunidad_mejora_llm(taxonomia_data, justificacion_clave):
     Genera una breve recomendación académica basada en la habilidad evaluada.
     """
     try:
-        model = GenerativeModel("gemini-2.5-flash-lite")
+        model = GenerativeModel("gemini-2.5-flash")
         
         # Extraemos los datos clave para el prompt
         evidencia = taxonomia_data.get("Evidencia", "la habilidad evaluada")
